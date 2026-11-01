@@ -26,9 +26,9 @@ def secret(name, default=""):
         return os.getenv(name, default)
 
 def check_password():
-    expected = secret("APP_PASSWORD", "")
+    expected = secret("app_password", "")
     if not expected:
-        st.error("Falta configurar APP_PASSWORD en los secretos del alojamiento. La app queda bloqueada por seguridad.")
+        st.error("Falta configurar app_password en los secretos del alojamiento. La app queda bloqueada por seguridad.")
         st.stop()
     if st.session_state.get("authenticated", False):
         return True
